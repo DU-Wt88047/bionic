@@ -105,14 +105,8 @@ cc_binary {
         debuggable: {
             cppflags: ["-DUSE_LD_CONFIG_FILE"],
         },
-        needs_text_relocations: {
-            cppflags: ["-DTARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS"],
-        },
-        needs_prelink_support: {
-            cppflags: ["-DENABLE_PRELINK_SUPPORT"],
-        },
-        needs_non_pie_support: {
-            cppflags: ["-DENABLE_NON_PIE_SUPPORT"],
+        target_shim_libs: {
+            cppflags: ["-DLD_SHIM_LIBS=\"%s\""],
         },
     },
 
